@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Mer blod</title>
+    <title>Hexo &amp;&amp; Git Page 我的个人博客 · Mer blod</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Mer blod</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Hexo && Git Page 我的个人博客</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Mer blod</a>
 </header>
@@ -220,24 +231,57 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Hexo && Git Page 我的个人博客
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "工具">工具</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">671</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/09/16</span>
+                    
+                    
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,78 +382,59 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/斐波那契数列/" >
-            
-                <span>斐波那契数列</span>
-        </a>
-        <div class="abstract-content">
-            斐波那契额数列起源公元1202年，意大利数学家斐波那契的传世之作《算法之术》出版。在这部名著中，斐波那契提出了以下饶有趣味的问题：
-如果一开始有一对兔子，它们每月生育一对兔子，小兔在出生后一个月又开始生育且繁殖情况与最初的那对兔子一样，那么一年后有多少对兔子？
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>博客。应该是程序员都有的一个东西。不仅仅只是供其他人去观看。也可以记录自己所学，所用，所遇到的问题以及解决方案。《论语》温故而知新。所以搭建一个博客用于自己记录也是一件蛮好的事情。</p>
+<p>下面记录一下这一次使用Hexo 以及 Git Page搭建博客的过程。</p>
+<h2 id="系统环境"><a href="#系统环境" class="headerlink" title="系统环境"></a>系统环境</h2><h3 id="安装Node"><a href="#安装Node" class="headerlink" title="安装Node"></a>安装Node</h3><p>要使用Hexo,需要安装Node,如果电脑里还没有安装Node,那就先安装Node吧。<a href="http://nodejs.cn/" target="_blank" rel="noopener">Node.js中文网</a></p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p><a href="http://git-scm.com/download/" target="_blank" rel="noopener">git下载地址</a></p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo</span><br><span class="line">$ npm install hexo-cli -g <span class="comment">#在这里使用npm 如果未翻墙 请使用cnpm</span></span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo g <span class="comment"># 或者hexo generate</span></span><br><span class="line">$ hexo s <span class="comment"># 或者hexo server，可以在http://localhost:4000/ 查看</span></span><br></pre></td></tr></table></figure>
+<p>在这里 对于一些命令进行记录说明<br>1.生成静态文件。会在根目录下生成public文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></p>
+<p>2.本地启动。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
+<p>3.部署到远端。比如下面要说的GitPage上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>4.新建文章<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"文章名称"</span> <span class="comment">#创建文章</span></span><br></pre></td></tr></table></figure></p>
+<p>5.新建页面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"页面名称"</span> <span class="comment">#创建页面</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Hexo更换主题"><a href="#Hexo更换主题" class="headerlink" title="Hexo更换主题"></a>Hexo更换主题</h2><h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ npm i hexo-generator-json-content --save &amp;&amp; npm i --save hexo-wordcount &amp;&amp; git <span class="built_in">clone</span> https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1</span><br></pre></td></tr></table></figure>
+<p>目前我使用的是一个叫做archer的主题。<a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank" rel="noopener">传送门</a>。这里面有对主题的修改说明。大致看了一下。是用ejs模板做的。可以自己再进行二次开发。</p>
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>我们需要在根目录下找到_config.yml文件。文件内有个theme属性，将其设置为archer。</p>
+<h3 id="运行主题"><a href="#运行主题" class="headerlink" title="运行主题"></a>运行主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s <span class="comment">#访问localhost:4000 就可以看到新的主题了</span></span><br></pre></td></tr></table></figure>
+<h2 id="Git-Page部署与设置"><a href="#Git-Page部署与设置" class="headerlink" title="Git Page部署与设置"></a>Git Page部署与设置</h2><h3 id="首先需要明白所谓部署到github的原理。"><a href="#首先需要明白所谓部署到github的原理。" class="headerlink" title="首先需要明白所谓部署到github的原理。"></a>首先需要明白所谓部署到github的原理。</h3><p>1.之前步骤中在Github上创建的那个特别的仓库（simple-hui.github.io）一个最大的特点就是其master中的html静态文件，可以通过链接<a href="http://simple-hui.github.io" target="_blank" rel="noopener">http://simple-hui.github.io</a>来直接访问。<br>2.Hexo -g 会生成一个静态网站（第一次会生成一个public目录），这个静态文件可以直接访问。<br>3.需要将hexo生成的静态网站，提交(git commit)到github上。</p>
+<h3 id="使用hexo-deploy部署"><a href="#使用hexo-deploy部署" class="headerlink" title="使用hexo deploy部署"></a>使用hexo deploy部署</h3><p>1.安装hexo-deployer-git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>2.在hexo根目录下的_config.yml文件中修改deploy配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:simple-hui/simple-hui.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>3.执行部署命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<p>做一个自己的博客就完成了。这时候就可以去通过访问<a href="http://simple-hui.github.io" target="_blank" rel="noopener">http://simple-hui.github.io</a>去访问自己的博客啦。</p>
 
-根据上图描述出来的结果就是：1.第一个月初有一对刚诞生的兔子2.第二个月之后（第三个月初）它们可以生育3.每月每对可生育的兔子会诞生下一对新兔子4.兔子永不死去
-即可得出：
-求解斐波拉切数列常用的求解方式有两种，一种使用递归来求解。一种使用递推来求解。
-1、 递归求解。1234567function fun(n) &#123;	...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/16/hexo/" >
-            
-                <span>Hexo &amp;&amp; Git Page 我的个人博客</span>
-        </a>
-        <div class="abstract-content">
-            博客。应该是程序员都有的一个东西。不仅仅只是供其他人去观看。也可以记录自己所学，所用，所遇到的问题以及解决方案。《论语》温故而知新。所以搭建一个博客用于自己记录也是一件蛮好的事情。
-下面记录一下这一次使用Hexo 以及 Git Page搭建博客的过程。
-系统环境安装Node要使用Hexo,需要安装Node,如果电脑里还没有安装Node,那就先安装Node吧。Node.js中文网
-安装Gitgit下载地址
-安装Hexo1234567$ cd d:/hexo$ npm install hexo-cli -g #在这里使用npm 如果未翻墙 请使用cnpm$ hexo init blog$ c...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "工具">工具</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2018/09/18/斐波那契数列/" title= "斐波那契数列">
+                    <div class="nextTitle">斐波那契数列</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -472,6 +497,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#系统环境"><span class="toc-number">1.</span> <span class="toc-text">系统环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Node"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Git"><span class="toc-number">1.2.</span> <span class="toc-text">安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Hexo"><span class="toc-number">1.3.</span> <span class="toc-text">安装Hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo更换主题"><span class="toc-number">2.</span> <span class="toc-text">Hexo更换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装主题"><span class="toc-number">2.1.</span> <span class="toc-text">安装主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启用主题"><span class="toc-number">2.2.</span> <span class="toc-text">启用主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行主题"><span class="toc-number">2.3.</span> <span class="toc-text">运行主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-Page部署与设置"><span class="toc-number">3.</span> <span class="toc-text">Git Page部署与设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首先需要明白所谓部署到github的原理。"><span class="toc-number">3.1.</span> <span class="toc-text">首先需要明白所谓部署到github的原理。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用hexo-deploy部署"><span class="toc-number">3.2.</span> <span class="toc-text">使用hexo deploy部署</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -599,6 +642,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
