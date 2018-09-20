@@ -78,6 +78,8 @@
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,10 +203,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,34 +220,21 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Mer blod
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                书山有路勤为径，学海无涯苦作舟
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -382,237 +369,10 @@ height:50vh;
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/树形结构获取当前节点的子节点/" >
-            
-                <span>树形结构获取当前节点的子节点</span>
-        </a>
-        <div class="abstract-content">
-            树形结构删除子节点1234567891011121314151617181920212223242526272829303132333435363738394041  var arr = [&#123;"condition":"0","id":"1000105","name":"&amp;&amp;","pId":"0"&#125;,&#123;"check_Child_State":-1,"check_Focus":false,"checked":false,"checkedOld":false,"chkDisabled":false,"condition":"0","editName...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/一些数据处理的方法/" >
-            
-                <span>一些数据处理的方法</span>
-        </a>
-        <div class="abstract-content">
-            一维数组去重ES6 new Set去重123function fn (arr) &#123;    return Array.from(new Set(arr));&#125;
-for循环嵌套去重1234567891011function fn (arr) &#123;    for ( var i = 0; i &lt; arr.length; i++ ) &#123;        for ( var j=i+1; j&lt;arr.length; j++ ) &#123;            if ( arr[i] == arr[j] ) &#123;              ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/柯里化函数Currying/" >
-            
-                <span>柯里化函数Currying</span>
-        </a>
-        <div class="abstract-content">
-            柯里化函数在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。这个技术由 Christopher Strachey 以逻辑学家哈斯凯尔·加里命名的，尽管它是 Moses Schönfinkel 和 Gottlob Frege 发明的。 —wiki(维基百科)
-例子实现 add(1)(2)(3)() = 6 的效果从上看出。要是实现一个function 让其调用的参数相加得出一个数。当入参为0的时候返回这个数1.传入参数的时候先存储起来。2.带入...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/斐波那契数列/" >
-            
-                <span>斐波那契数列</span>
-        </a>
-        <div class="abstract-content">
-            斐波那契数列起源公元1202年，意大利数学家斐波那契的传世之作《算法之术》出版。在这部名著中，斐波那契提出了以下饶有趣味的问题：
-如果一开始有一对兔子，它们每月生育一对兔子，小兔在出生后一个月又开始生育且繁殖情况与最初的那对兔子一样，那么一年后有多少对兔子？
-
-根据上图描述出来的结果就是：1.第一个月初有一对刚诞生的兔子2.第二个月之后（第三个月初）它们可以生育3.每月每对可生育的兔子会诞生下一对新兔子4.兔子永不死去
-即可得出：
-求解斐波拉切数列常用的求解方式有两种，一种使用递归来求解。一种使用递推来求解。
-1、 递归求解。1234567function fun(n) &#123;	i...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/16/hexo/" >
-            
-                <span>Hexo &amp;&amp; Git Page 我的个人博客</span>
-        </a>
-        <div class="abstract-content">
-            博客。应该是程序员都有的一个东西。不仅仅只是供其他人去观看。也可以记录自己所学，所用，所遇到的问题以及解决方案。《论语》温故而知新。所以搭建一个博客用于自己记录也是一件蛮好的事情。
-下面记录一下这一次使用Hexo 以及 Git Page搭建博客的过程。
-系统环境安装Node要使用Hexo,需要安装Node,如果电脑里还没有安装Node,那就先安装Node吧。Node.js中文网
-安装Gitgit下载地址
-安装Hexo1234567$ cd d:/hexo$ npm install hexo-cli -g #在这里使用npm 如果未翻墙 请使用cnpm$ hexo init blog$ c...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "工具">工具</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg >
-    <div class="profile-name">Mer</div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= https://www.marke.xin/ target="_black">maqun</a>
-                    </span>
-                
-            
-                
-            
-                
-            
-        </div>
-    
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
