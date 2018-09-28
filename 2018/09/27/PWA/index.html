@@ -396,7 +396,7 @@ height:50vh;
 <p>废弃状态（Redundant）：这个状态表示一个 Service Worker 的生命周期结束。进入废弃 ( redundant ) 状态的原因可能为这几种：<br>安装 ( install ) 失败<br>激活 ( activating ) 失败<br>新版本的 Service Worker 替换了它并成为激活状态</p>
 <p>注册 service worker;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">    navigator.serviceWorker.register(sw.js) // 注册sw.js 文件中变成的服务对象，返回注册成功的对象</span><br><span class="line">    .<span class="keyword">then</span>(<span class="keyword">function</span>(swReg)&#123;</span><br><span class="line">          swRegistration = swReg;</span><br><span class="line">     &#125;).catch(<span class="keyword">function</span>(error) &#123;</span><br><span class="line">          console.error(<span class="string">'Service Worker Error'</span>, error);</span><br><span class="line">     &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在sw文件中通过install事件进行静态缓存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> cacheName = <span class="string">'pwaName'</span>;</span><br><span class="line">self.addEventListener(<span class="string">'install'</span>,events=&gt;&#123; <span class="comment">#self 表示 service worker 作用域</span></span><br><span class="line">    events.waitUntil(</span><br><span class="line">        caches.open(cacheName);</span><br><span class="line">    ).<span class="keyword">then</span>(catch=&gt;catch.addAll([</span><br><span class="line">        <span class="string">'img'</span>,</span><br><span class="line">        <span class="string">'js'</span>,</span><br><span class="line">        <span class="string">'css'</span></span><br><span class="line">    ]))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>通过 fetch 事件使用缓存和处理动态缓存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">self.addEventListener(<span class="string">'fetch'</span>, (e) =&gt; &#123;</span><br><span class="line">    // 判断地址是不是需要实时去请求，是就继续发送请求</span><br><span class="line">    <span class="keyword">if</span> (e.request.url.indexOf(<span class="string">'/api/400/200'</span>) &gt; -1) &#123;</span><br><span class="line">        e.respondWith(</span><br><span class="line">            caches.open(imgCacheName).<span class="keyword">then</span>(<span class="keyword">function</span>(cache)&#123;</span><br><span class="line">                 <span class="built_in">return</span> fetch(e.request).<span class="keyword">then</span>(<span class="keyword">function</span> (response)&#123;</span><br><span class="line">                    cache.put(e.request.url, response.clone()); // 每请求一次缓存更新一次新加载的图片</span><br><span class="line">                    <span class="built_in">return</span> response;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;)</span><br><span class="line">        );</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        e.respondWith(</span><br><span class="line">            // 匹配到缓存资源，就从缓存中返回数据</span><br><span class="line">            caches.match(e.request).<span class="keyword">then</span>(<span class="keyword">function</span> (response) &#123;</span><br><span class="line">                <span class="built_in">return</span> response || fetch(e.request);</span><br><span class="line">            &#125;)</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>通过 fetch 事件使用缓存和处理动态缓存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">self.addEventListener(<span class="string">'fetch'</span>, (e) =&gt; &#123;</span><br><span class="line">    // 判断地址是不是需要实时去请求，是就继续发送请求</span><br><span class="line">    <span class="keyword">if</span> (e.request.url.indexOf(<span class="string">'/api/400/200'</span>) &gt; -1) &#123;</span><br><span class="line">        e.respondWith(</span><br><span class="line">            caches.open(imgCacheName).<span class="keyword">then</span>(<span class="keyword">function</span>(cache)&#123;</span><br><span class="line">                 <span class="built_in">return</span> fetch(e.request).<span class="keyword">then</span>(<span class="keyword">function</span> (response)&#123;</span><br><span class="line">                    cache.put(e.request.url, response.clone()); //  每请求一次缓存更新一次新加载的图片</span><br><span class="line">                    <span class="built_in">return</span> response;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;)</span><br><span class="line">        );</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        e.respondWith(</span><br><span class="line">            // 匹配到缓存资源，就从缓存中返回数据</span><br><span class="line">            caches.match(e.request).<span class="keyword">then</span>(<span class="keyword">function</span> (response) &#123;</span><br><span class="line">                <span class="built_in">return</span> response || fetch(e.request);</span><br><span class="line">            &#125;)</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p><img src="/2018/09/27/PWA/643.jpg" alt=""></p>
 <p>补充：PWA应用需要在本地的localhost:8080或者127.0.0.1或者https下运行，必须保证页面是安全页面才可以。附上官方教程<a href="https://developers.google.com/web/progressive-web-apps/" target="_blank" rel="noopener">https://developers.google.com/web/progressive-web-apps/</a></p>
 
@@ -406,6 +406,11 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2018/09/28/贪心算法-找零钱/" title= "贪心算法-找零钱">
+                    <div class="nextTitle">贪心算法-找零钱</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -627,9 +632,32 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 9
+        Total : 10
         </div>
         <!-- search  -->
         
@@ -642,6 +670,11 @@ top:50vh;
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2018/09/28/贪心算法-找零钱/" >贪心算法-找零钱</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -695,11 +728,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="工具"><span class="iconfont-archer">&#xe606;</span>工具</span>
     
+        <span class="sidebar-tag-name" data-tags="CSS3"><span class="iconfont-archer">&#xe606;</span>CSS3</span>
+    
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
     
         <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
-    
-        <span class="sidebar-tag-name" data-tags="CSS3"><span class="iconfont-archer">&#xe606;</span>CSS3</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
