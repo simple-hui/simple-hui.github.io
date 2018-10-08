@@ -78,8 +78,6 @@
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -203,8 +201,10 @@
 </head>
 
     
+        <body class="home-body">
     
-<header class="header">
+    
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,21 +220,34 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            Mer blod
+            <!-- 文章页  -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
+            
+            
+                书山有路勤为径，学海无涯苦作舟
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -346,79 +359,21 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/08/有关svg想说的那些事/" >
+        <a class="abstract-title" href = "/2018/09/16/hexo/" >
             
-                <span>有关svg想说的那些事</span>
+                <span>Hexo &amp;&amp; Git Page 我的个人博客</span>
         </a>
         <div class="abstract-content">
-            记得第一次接触svg的时候是14年，那时候做汽车类型的宣传网站。整个网站的设计图片很多，可能都不是很多能形容的，那可是相当的多。当时对图片进行了压缩处理。但是还是会有一些小的icon。所以当时会把图片用ai切出来。然后导出svg，查看一下代码。出现了一堆svg啊、path啊等等的标签。。。里面还有一堆数字。脑子混乱中。。
-正文可缩放矢量图形是基于可扩展标记语言（标准通用标记语言的子集），用于描述二维矢量图形的一种图形格式。它由万维网联盟制定，是一个开放标准。 — 摘自百度百科
-基本的svg元素svg: 所有的svg图标存在于svg内部，这个标签是在html标签内的一个标签。类似于div这...
+            博客。应该是程序员都有的一个东西。不仅仅只是供其他人去观看。也可以记录自己所学，所用，所遇到的问题以及解决方案。《论语》温故而知新。所以搭建一个博客用于自己记录也是一件蛮好的事情。
+下面记录一下这一次使用Hexo 以及 Git Page搭建博客的过程。
+系统环境安装Node要使用Hexo,需要安装Node,如果电脑里还没有安装Node,那就先安装Node吧。Node.js中文网
+安装Gitgit下载地址
+安装Hexo1234567$ cd d:/hexo$ npm install hexo-cli -g #在这里使用npm 如果未翻墙 请使用cnpm$ hexo init blog$ c...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Html5">Html5</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/28/贪心算法-找零钱/" >
-            
-                <span>贪心算法-找零钱</span>
-        </a>
-        <div class="abstract-content">
-            贪心算法简介贪心算法（又称贪婪算法）是指，在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，他所做出的是在某种意义上的局部最优解。贪心算法不是对所有问题都能得到整体最优解，关键是贪心策略的选择，选择的贪心策略必须具备无后效性，即某个状态以前的过程不会影响以后的状态，只与当前状态有关。 —– 摘自百度百科
-解析在日常生活中，比如现在有50,20,10,5,1元这些面额的纸币。需要找零的钱金额为67元，那么怎么使用数目最少的方式找钱呢？解析一下问题。我们可以形成两个数据1234567891011let arr = [50,20,10,5,1]; # 用一个数组...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/27/PWA/" >
-            
-                <span>PWA</span>
-        </a>
-        <div class="abstract-content">
-            什么是PWAPWA（Progressive Web App）[1]， 渐进式 WEB 应用，是提升 Web App 的体验的一种方法，给用户原生应用的体验。PWA 可以通过 Service Worker， Manifest 等新技术让站点具备离线可用、添加到桌面、实时消息提醒等功能，从功能和体验上无限接近原生 App。
-背景故事自1990年万维网之父-蒂莫西·约翰·“蒂姆”·伯纳·李爵士，创建了 HTTP、HTML 和 WorldWideWeb (全世界第一个网页浏览器)以来，Web 技术和影响力在以惊人的速度增长。HTML5，CSS3，Webpack，React，VUE，Babel，S...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/27</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/16</span>
             </div>
             <!-- tags  -->
             
@@ -431,228 +386,84 @@
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/25/获取数据类型/" >
-            
-                <span>获取数据类型</span>
-        </a>
-        <div class="abstract-content">
-            获取数据类型数据类型基本数据类型: number string boolean null undefined symbol(es6)引用数据类型: object function array regExp等
-typeof我们常用的typeof用于检测数据类型。但是typeof并不能判断所有数据类型。当遇到object和null的时候分别返回 function 跟 object。
-使用typeof判断数据类型的返回值数字 ===&gt; number字符串 ===&gt; string布尔值 ===&gt; boolean未定义 ===&gt; undefined对象,null ===&g...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/22/排序算法/" >
-            
-                <span>排序算法</span>
-        </a>
-        <div class="abstract-content">
-            算法  js在操作数组的时候，本身自己带有sort方法。这个方法基本已经满足了日常需求。但是今天还是来学习一下其他排序算法。先记录一下基本的排序算法。
-冒泡排序冒泡排序的思想很简单。就是前后两两比较大小。然后进行互换位置。1234567891011function sort(arr) &#123;    var len = arr.length;    for (let i = 0 ; i &lt; len; i++) &#123;        for(let j = 0; j &lt; len - i - 1; j++) &#123;            if(arr[j] &gt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/css3实现3D翻书效果/" >
-            
-                <span>Css3实现3D翻书效果</span>
-        </a>
-        <div class="abstract-content">
-            Css3翻书效果前言：在掘金上看到一篇人人网的FED的文章。关于Css3翻书效果的。于是自己也尝试了一下。简单的翻书功能已经完成。直接上代码Html部分12345678910111213141516171819202122232425262728293031323334&lt;ul class="pages"&gt;    &lt;li class="paper" data-left&gt;        &lt;div class="page page-1-back"&gt;            &lt;img src="/static/1.jpeg" /&gt;        &l...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CSS3">CSS3</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/树形结构获取当前节点的子节点/" >
-            
-                <span>树形结构获取当前节点的子节点</span>
-        </a>
-        <div class="abstract-content">
-            树形结构删除子节点1234567891011121314151617181920212223242526272829303132333435363738394041  var arr = [&#123;"condition":"0","id":"1000105","name":"&amp;&amp;","pId":"0"&#125;,&#123;"check_Child_State":-1,"check_Focus":false,"checked":false,"checkedOld":false,"chkDisabled":false,"condition":"0","editName...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/一些数据处理的方法/" >
-            
-                <span>一些数据处理的方法</span>
-        </a>
-        <div class="abstract-content">
-            一维数组去重ES6 new Set去重123function fn (arr) &#123;    return Array.from(new Set(arr));&#125;
-for循环嵌套去重1234567891011function fn (arr) &#123;    for ( var i = 0; i &lt; arr.length; i++ ) &#123;        for ( var j=i+1; j&lt;arr.length; j++ ) &#123;            if ( arr[i] == arr[j] ) &#123;              ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/柯里化函数Currying/" >
-            
-                <span>柯里化函数Currying</span>
-        </a>
-        <div class="abstract-content">
-            柯里化函数在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。这个技术由 Christopher Strachey 以逻辑学家哈斯凯尔·加里命名的，尽管它是 Moses Schönfinkel 和 Gottlob Frege 发明的。 —wiki(维基百科)
-例子实现 add(1)(2)(3)() = 6 的效果从上看出。要是实现一个function 让其调用的参数相加得出一个数。当入参为0的时候返回这个数1.传入参数的时候先存储起来。2.带入...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/斐波那契数列/" >
-            
-                <span>斐波那契数列</span>
-        </a>
-        <div class="abstract-content">
-            斐波那契数列起源公元1202年，意大利数学家斐波那契的传世之作《算法之术》出版。在这部名著中，斐波那契提出了以下饶有趣味的问题：
-如果一开始有一对兔子，它们每月生育一对兔子，小兔在出生后一个月又开始生育且繁殖情况与最初的那对兔子一样，那么一年后有多少对兔子？
-
-根据上图描述出来的结果就是：1.第一个月初有一对刚诞生的兔子2.第二个月之后（第三个月初）它们可以生育3.每月每对可生育的兔子会诞生下一对新兔子4.兔子永不死去
-即可得出：
-求解斐波拉切数列常用的求解方式有两种，一种使用递归来求解。一种使用递推来求解。
-1、 递归求解。1234567function fun(n) &#123;	i...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
     
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg >
+    <div class="profile-name">Mer</div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+                    <span>
+                        <a href= https://www.marke.xin/ target="_black">maqun</a>
+                    </span>
+                
+            
+                
+            
+                
+            
+        </div>
+    
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
