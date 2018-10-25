@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Mer blod</title>
+    <title>老生常谈之深浅复制 · Mer blod</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Mer blod</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">老生常谈之深浅复制</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Mer blod</a>
 </header>
@@ -220,24 +231,57 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            老生常谈之深浅复制
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">425</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/10/25</span>
+                    
+                    
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,107 +382,54 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/25/老生常谈之深浅复制/" >
-            
-                <span>老生常谈之深浅复制</span>
-        </a>
-        <div class="abstract-content">
-            数据类型数据分为基本数据类型(String, Number, boolean, Null, Undefined，Symbol)和对象数据类型。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>数据分为基本数据类型(String, Number, boolean, Null, Undefined，Symbol)和对象数据类型。</p>
+<ul>
+<li>基本数据类型的特点：直接存储在栈(stack)中的数据</li>
+<li>对象数据类型的特点：存储的是该对象在栈中引用，真实的数据存放在堆内存里</li>
+</ul>
+<h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h2><p>浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。但深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。</p>
+<p>大概示意图入下<br><img src="/2018/10/25/老生常谈之深浅复制/1.jpg" alt=""></p>
+<h2 id="浅拷贝的实现方式"><a href="#浅拷贝的实现方式" class="headerlink" title="浅拷贝的实现方式"></a>浅拷贝的实现方式</h2><p>1、直接赋值给一个新的变量（这是我们日常工作中常用的）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> obj2 = obj;</span><br><span class="line">obj2.a = 2;</span><br><span class="line">console.log(obj,obj2);</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/25/老生常谈之深浅复制/2.png" alt=""><br>2、Object.assign()<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> obj = &#123;</span><br><span class="line">    a: 1</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">let</span> obj2 = Object.assign(obj);</span><br><span class="line">obj.a = 2;</span><br><span class="line">console.log(obj,obj2);</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/25/老生常谈之深浅复制/3.png" alt=""></p>
+<h2 id="深拷贝的实现方式"><a href="#深拷贝的实现方式" class="headerlink" title="深拷贝的实现方式"></a>深拷贝的实现方式</h2><p>1、JSON.parse(JSON.stringify())<br>日用工作中常用的方式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1,2,&#123;a: 1&#125;];</span><br><span class="line"><span class="built_in">let</span> arr2 = JSON.parse(JSON.stringify(arr));</span><br><span class="line">arr[2].a = 2;</span><br><span class="line">console.log(arr,arr2);</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/25/老生常谈之深浅复制/4.png" alt=""><br>使用这种方式，我们只能处理标准的json格式的数据。但是不能处理函数，如果是函数则会返回null<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1,2,<span class="function"><span class="title">function</span></span> () &#123;&#125;];</span><br><span class="line"><span class="built_in">let</span> arr2 = JSON.parse(JSON.stringify(arr));</span><br><span class="line">console.log(arr,arr2);</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/25/老生常谈之深浅复制/5.png" alt=""><br>对于函数的处理目前还没有什么好的方式，目前只知道可以new一下可以进行深拷贝。<br>从lodash的源码里看到的也没有支持function类型。或者我没找对。。。<br><img src="/2018/10/25/老生常谈之深浅复制/7.png" alt=""><br>2、…运算符(一维数组)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3];</span><br><span class="line">var arr2 = [...arr];</span><br><span class="line">arr2[2] = 2;</span><br><span class="line">console.log(arr,arr2);</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/10/25/老生常谈之深浅复制/6.png" alt=""></p>
 
-基本数据类型的特点：直接存储在栈(stack)中的数据
-对象数据类型的特点：存储的是该对象在栈中引用，真实的数据存放在堆内存里
-
-深拷贝与浅拷贝浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。但深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。
-大概示意图入下
-浅拷贝的实现方式1、直接赋值给一个新的变量（这是我们日常工作中常用的）1234567let obj = &#123; ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/12/glup自动化部署/" >
-            
-                <span>glup自动化部署</span>
-        </a>
-        <div class="abstract-content">
-            前言最近做了一个项目，一个聊天窗口项目。前端这里技术还是用的vue。之前部署都是在Jenkins上写好shell脚本。然后直接点一下就行。由于这个项目并没有人去配这个。每一次发版都是ssh登录服务器。然后cd到目录下。把本地的文件打包rz上去。再进行unzip。这一通操作，浪费了不少时间。而且还容易出错。由于使用的是root用户。每天在服务器上rm -rf 删掉旧的版本。心惊胆战（删库跑路）。所以准备借用gulp实现自动化上传。由于cli的脚本已经做了压缩处理。形成了index.html跟static文件夹。就不再使用gulp进行压缩了。只做了上传部分以及删除旧文件。
-环境Node np...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "工具">工具</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/08/有关svg想说的那些事/" >
-            
-                <span>有关svg想说的那些事</span>
-        </a>
-        <div class="abstract-content">
-            记得第一次接触svg的时候是14年，那时候做汽车类型的宣传网站。整个网站的设计图片很多，可能都不是很多能形容的，那可是相当的多。当时对图片进行了压缩处理。但是还是会有一些小的icon。所以当时会把图片用ai切出来。然后导出svg，查看一下代码。出现了一堆svg啊、path啊等等的标签。。。里面还有一堆数字。脑子混乱中。。
-正文可缩放矢量图形是基于可扩展标记语言（标准通用标记语言的子集），用于描述二维矢量图形的一种图形格式。它由万维网联盟制定，是一个开放标准。 — 摘自百度百科
-基本的svg元素svg: 所有的svg图标存在于svg内部，这个标签是在html标签内的一个标签。类似于div这...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Html5">Html5</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/10/12/glup自动化部署/" title= "glup自动化部署">
+                    <div class="prevTitle">glup自动化部署</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -499,6 +490,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深拷贝与浅拷贝"><span class="toc-number">2.</span> <span class="toc-text">深拷贝与浅拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浅拷贝的实现方式"><span class="toc-number">3.</span> <span class="toc-text">浅拷贝的实现方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深拷贝的实现方式"><span class="toc-number">4.</span> <span class="toc-text">深拷贝的实现方式</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -822,6 +831,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
