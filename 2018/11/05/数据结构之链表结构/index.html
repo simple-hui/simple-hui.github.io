@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Mer blod</title>
+    <title>数据结构之链表结构 · Mer blod</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Mer blod</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">数据结构之链表结构</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Mer blod</a>
 </header>
@@ -220,24 +231,57 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            数据结构之链表结构
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数据结构">数据结构</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">686</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/11/05</span>
+                    
+                    
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,166 +382,49 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/25/老生常谈之深浅复制/" >
-            
-                <span>老生常谈之深浅复制</span>
-        </a>
-        <div class="abstract-content">
-            数据类型数据分为基本数据类型(String, Number, boolean, Null, Undefined，Symbol)和对象数据类型。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="链表结构"><a href="#链表结构" class="headerlink" title="链表结构"></a>链表结构</h2><p>之所以写这篇文章，是因为之前遇到过一个问题。正常我们要处理一个数组[1,3,4,5,6,7]这样一个数组。比如我们要插入一个值2，在当在前数组index等于1的位置上。第一反应会想到用splice();</p>
+<h3 id="splice-index-howmany-item"><a href="#splice-index-howmany-item" class="headerlink" title="splice(index,howmany,item);"></a>splice(index,howmany,item);</h3><p>这个函数存在3个参数，其中index跟howmany为必填。<br>index:整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。<br>howmany:要删除的项目数量，如果设置为0，责不会删除项目。<br>item:唯一一个可选项，想数组添加新项目。</p>
+<p>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,3,4,5,6,7]</span><br><span class="line">arr.splice(1,0,2);</span><br><span class="line">console.log(arr); // [1,2,3,4,5,6,7];</span><br></pre></td></tr></table></figure></p>
+<p>翻阅了github <a href="https://github.com/v8/v8/blob/ad82a40509c5b5b4680d4299c8f08d6c6d31af3c/src/js/array.js" target="_blank" rel="noopener">V8的源码660行</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> ArraySplice(start, delete_count) &#123;</span><br><span class="line">  CHECK_OBJECT_COERCIBLE(this, <span class="string">"Array.prototype.splice"</span>);</span><br><span class="line"></span><br><span class="line">  var num_arguments = arguments.length;</span><br><span class="line">  var array = TO_OBJECT(this);</span><br><span class="line">  var len = TO_LENGTH(array.length);</span><br><span class="line">  var start_i = ComputeSpliceStartIndex(TO_INTEGER(start), len);</span><br><span class="line">  var del_count = ComputeSpliceDeleteCount(delete_count, num_arguments, len,</span><br><span class="line">                                           start_i);</span><br><span class="line">  var deleted_elements = ArraySpeciesCreate(array, del_count);</span><br><span class="line">  deleted_elements.length = del_count;</span><br><span class="line">  var num_elements_to_add = num_arguments &gt; 2 ? num_arguments - 2 : 0;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (del_count != num_elements_to_add &amp;&amp; %object_is_sealed(array)) &#123;</span><br><span class="line">    throw %make_type_error(kArrayFunctionsOnSealed);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (del_count &gt; 0 &amp;&amp; %object_is_frozen(array)) &#123;</span><br><span class="line">    throw %make_type_error(kArrayFunctionsOnFrozen);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  var changed_elements = del_count;</span><br><span class="line">  <span class="keyword">if</span> (num_elements_to_add != del_count) &#123;</span><br><span class="line">    // If the slice needs to <span class="keyword">do</span> a actually move elements after the insertion</span><br><span class="line">    // point, <span class="keyword">then</span> include those <span class="keyword">in</span> the estimate of changed elements.</span><br><span class="line">    changed_elements += len - start_i - del_count;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (UseSparseVariant(array, len, IS_ARRAY(array), changed_elements)) &#123;</span><br><span class="line">    %NormalizeElements(array);</span><br><span class="line">    <span class="keyword">if</span> (IS_ARRAY(deleted_elements)) %NormalizeElements(deleted_elements);</span><br><span class="line">    SparseSlice(array, start_i, del_count, len, deleted_elements);</span><br><span class="line">    SparseMove(array, start_i, del_count, len, num_elements_to_add);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    SimpleSlice(array, start_i, del_count, len, deleted_elements);</span><br><span class="line">    SimpleMove(array, start_i, del_count, len, num_elements_to_add);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // Insert the arguments into the resulting array <span class="keyword">in</span></span><br><span class="line">  // place of the deleted elements.</span><br><span class="line">  var i = start_i;</span><br><span class="line">  var arguments_index = 2;</span><br><span class="line">  var arguments_length = arguments.length;</span><br><span class="line">  <span class="keyword">while</span> (arguments_index &lt; arguments_length) &#123;</span><br><span class="line">    array[i++] = arguments[arguments_index++];</span><br><span class="line">  &#125;</span><br><span class="line">  array.length = len - del_count + num_elements_to_add;</span><br><span class="line"></span><br><span class="line">  // Return the deleted elements.</span><br><span class="line">  <span class="built_in">return</span> deleted_elements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>====================</p>
+<p>后话是，这么处理的速度是最优的么，用链表结构是不是好点。<br>那么 链表来了。。。</p>
+<h3 id="链表结构-1"><a href="#链表结构-1" class="headerlink" title="链表结构"></a>链表结构</h3><p>链表特点：链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（指针或链接）组成。</p>
+<p>相对于传统的数组，链表的一个好处在于，添加或移除元素的时候不需要移动其他元素。然而，链表需要使用指针，因此实现链表时需要额外注意。数组的另一个细节是可以直接访问任何位置的元素，而想要访问链表中间的一个元素，需要从起点开始迭代链表直到找到所需元素。</p>
+<p>用图来形容一下。<br><img src="/2018/11/05/数据结构之链表结构/1.png" alt=""><br><img src="/2018/11/05/数据结构之链表结构/2.png" alt=""><br>简单来解释一下，就是每一个节点都会对应有一个next，next指向到下一个节点。需要增加或者删除的时候只需要改变节点的next即可。</p>
 
-基本数据类型的特点：直接存储在栈(stack)中的数据
-对象数据类型的特点：存储的是该对象在栈中引用，真实的数据存放在堆内存里
-
-深拷贝与浅拷贝浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。但深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。
-大概示意图入下
-浅拷贝的实现方式1、直接赋值给一个新的变量（这是我们日常工作中常用的）1234567let obj = &#123; ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/25/获取数据类型/" >
-            
-                <span>获取数据类型</span>
-        </a>
-        <div class="abstract-content">
-            获取数据类型数据类型基本数据类型: number string boolean null undefined symbol(es6)引用数据类型: object function array regExp等
-typeof我们常用的typeof用于检测数据类型。但是typeof并不能判断所有数据类型。当遇到object和null的时候分别返回 function 跟 object。
-使用typeof判断数据类型的返回值数字 ===&gt; number字符串 ===&gt; string布尔值 ===&gt; boolean未定义 ===&gt; undefined对象,null ===&g...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/树形结构获取当前节点的子节点/" >
-            
-                <span>树形结构获取当前节点的子节点</span>
-        </a>
-        <div class="abstract-content">
-            树形结构删除子节点1234567891011121314151617181920212223242526272829303132333435363738394041  var arr = [&#123;"condition":"0","id":"1000105","name":"&amp;&amp;","pId":"0"&#125;,&#123;"check_Child_State":-1,"check_Focus":false,"checked":false,"checkedOld":false,"chkDisabled":false,"condition":"0","editName...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/一些数据处理的方法/" >
-            
-                <span>一些数据处理的方法</span>
-        </a>
-        <div class="abstract-content">
-            一维数组去重ES6 new Set去重123function fn (arr) &#123;    return Array.from(new Set(arr));&#125;
-for循环嵌套去重1234567891011function fn (arr) &#123;    for ( var i = 0; i &lt; arr.length; i++ ) &#123;        for ( var j=i+1; j&lt;arr.length; j++ ) &#123;            if ( arr[i] == arr[j] ) &#123;              ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/柯里化函数Currying/" >
-            
-                <span>柯里化函数Currying</span>
-        </a>
-        <div class="abstract-content">
-            柯里化函数在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。这个技术由 Christopher Strachey 以逻辑学家哈斯凯尔·加里命名的，尽管它是 Moses Schönfinkel 和 Gottlob Frege 发明的。 —wiki(维基百科)
-例子实现 add(1)(2)(3)() = 6 的效果从上看出。要是实现一个function 让其调用的参数相加得出一个数。当入参为0的时候返回这个数1.传入参数的时候先存储起来。2.带入...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/10/25/老生常谈之深浅复制/" title= "老生常谈之深浅复制">
+                    <div class="prevTitle">老生常谈之深浅复制</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -558,6 +485,24 @@ for循环嵌套去重1234567891011function fn (arr) &#123;    for ( var i = 0; i
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#链表结构"><span class="toc-number">1.</span> <span class="toc-text">链表结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#splice-index-howmany-item"><span class="toc-number">1.1.</span> <span class="toc-text">splice(index,howmany,item);</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链表结构-1"><span class="toc-number">1.2.</span> <span class="toc-text">链表结构</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -891,6 +836,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

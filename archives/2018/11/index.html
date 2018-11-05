@@ -346,150 +346,25 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/25/老生常谈之深浅复制/" >
+        <a class="abstract-title" href = "/2018/11/05/数据结构之链表结构/" >
             
-                <span>老生常谈之深浅复制</span>
+                <span>数据结构之链表结构</span>
         </a>
         <div class="abstract-content">
-            数据类型数据分为基本数据类型(String, Number, boolean, Null, Undefined，Symbol)和对象数据类型。
-
-基本数据类型的特点：直接存储在栈(stack)中的数据
-对象数据类型的特点：存储的是该对象在栈中引用，真实的数据存放在堆内存里
-
-深拷贝与浅拷贝浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。但深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。
-大概示意图入下
-浅拷贝的实现方式1、直接赋值给一个新的变量（这是我们日常工作中常用的）1234567let obj = &#123; ...
+            链表结构之所以写这篇文章，是因为之前遇到过一个问题。正常我们要处理一个数组[1,3,4,5,6,7]这样一个数组。比如我们要插入一个值2，在当在前数组index等于1的位置上。第一反应会想到用splice();
+splice(index,howmany,item);这个函数存在3个参数，其中index跟howmany为必填。index:整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。howmany:要删除的项目数量，如果设置为0，责不会删除项目。item:唯一一个可选项，想数组添加新项目。
+例如：123var arr = [1,3,4,5,6,7]arr.splice(1...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/25</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/05</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/25/获取数据类型/" >
-            
-                <span>获取数据类型</span>
-        </a>
-        <div class="abstract-content">
-            获取数据类型数据类型基本数据类型: number string boolean null undefined symbol(es6)引用数据类型: object function array regExp等
-typeof我们常用的typeof用于检测数据类型。但是typeof并不能判断所有数据类型。当遇到object和null的时候分别返回 function 跟 object。
-使用typeof判断数据类型的返回值数字 ===&gt; number字符串 ===&gt; string布尔值 ===&gt; boolean未定义 ===&gt; undefined对象,null ===&g...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/树形结构获取当前节点的子节点/" >
-            
-                <span>树形结构获取当前节点的子节点</span>
-        </a>
-        <div class="abstract-content">
-            树形结构删除子节点1234567891011121314151617181920212223242526272829303132333435363738394041  var arr = [&#123;"condition":"0","id":"1000105","name":"&amp;&amp;","pId":"0"&#125;,&#123;"check_Child_State":-1,"check_Focus":false,"checked":false,"checkedOld":false,"chkDisabled":false,"condition":"0","editName...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/一些数据处理的方法/" >
-            
-                <span>一些数据处理的方法</span>
-        </a>
-        <div class="abstract-content">
-            一维数组去重ES6 new Set去重123function fn (arr) &#123;    return Array.from(new Set(arr));&#125;
-for循环嵌套去重1234567891011function fn (arr) &#123;    for ( var i = 0; i &lt; arr.length; i++ ) &#123;        for ( var j=i+1; j&lt;arr.length; j++ ) &#123;            if ( arr[i] == arr[j] ) &#123;              ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/柯里化函数Currying/" >
-            
-                <span>柯里化函数Currying</span>
-        </a>
-        <div class="abstract-content">
-            柯里化函数在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。这个技术由 Christopher Strachey 以逻辑学家哈斯凯尔·加里命名的，尽管它是 Moses Schönfinkel 和 Gottlob Frege 发明的。 —wiki(维基百科)
-例子实现 add(1)(2)(3)() = 6 的效果从上看出。要是实现一个function 让其调用的参数相加得出一个数。当入参为0的时候返回这个数1.传入参数的时候先存储起来。2.带入...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数据结构">数据结构</a>
     
 </div>
             
