@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Mer blod</title>
+    <title>flex布局 · Mer blod</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Mer blod</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">flex布局</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Mer blod</a>
 </header>
@@ -220,24 +231,57 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            flex布局
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "布局">布局</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">601</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/11/13</span>
+                    
+                    
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,105 +382,56 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/28/贪心算法-找零钱/" >
-            
-                <span>贪心算法-找零钱</span>
-        </a>
-        <div class="abstract-content">
-            贪心算法简介贪心算法（又称贪婪算法）是指，在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，他所做出的是在某种意义上的局部最优解。贪心算法不是对所有问题都能得到整体最优解，关键是贪心策略的选择，选择的贪心策略必须具备无后效性，即某个状态以前的过程不会影响以后的状态，只与当前状态有关。 —– 摘自百度百科
-解析在日常生活中，比如现在有50,20,10,5,1元这些面额的纸币。需要找零的钱金额为67元，那么怎么使用数目最少的方式找钱呢？解析一下问题。我们可以形成两个数据1234567891011let arr = [50,20,10,5,1]; # 用一个数组...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/22/排序算法/" >
-            
-                <span>排序算法</span>
-        </a>
-        <div class="abstract-content">
-            算法  js在操作数组的时候，本身自己带有sort方法。这个方法基本已经满足了日常需求。但是今天还是来学习一下其他排序算法。先记录一下基本的排序算法。
-冒泡排序冒泡排序的思想很简单。就是前后两两比较大小。然后进行互换位置。1234567891011function sort(arr) &#123;    var len = arr.length;    for (let i = 0 ; i &lt; len; i++) &#123;        for(let j = 0; j &lt; len - i - 1; j++) &#123;            if(arr[j] &gt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/08/斐波那契数列/" >
-            
-                <span>斐波那契数列</span>
-        </a>
-        <div class="abstract-content">
-            斐波那契数列起源公元1202年，意大利数学家斐波那契的传世之作《算法之术》出版。在这部名著中，斐波那契提出了以下饶有趣味的问题：
-如果一开始有一对兔子，它们每月生育一对兔子，小兔在出生后一个月又开始生育且繁殖情况与最初的那对兔子一样，那么一年后有多少对兔子？
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>一直以来，都在使用flex布局。今天就来系统的写一下flex。</p>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><p>flex布局是Flexible Box的缩写，其意思是“弹性布局”。<br>不论是块级元素还是行内元素都可以使用flex布局。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 块</span></span><br><span class="line">.box &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 行内</span></span><br><span class="line">.box &#123;</span><br><span class="line">    display: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction: row|row-reverse|column|column-reverse|initial|inherit;</span><br></pre></td></tr></table></figure>
+<p>row: 水平显示，从左开始。<br>row-reverse：水平显示，从右开始。<br>column：垂直显示，从上开始。<br>column-reverse：垂直显示，从下开始。<br><img src="/2018/11/13/flex布局/1.png" alt=""></p>
+<h4 id="flex-wrap属性"><a href="#flex-wrap属性" class="headerlink" title="flex-wrap属性"></a>flex-wrap属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;</span><br></pre></td></tr></table></figure>
+<p>nowrap：（默认属性）不换行。<br><img src="/2018/11/13/flex布局/2.png" alt=""><br>wrap：换行，在第一行上方。<br><img src="/2018/11/13/flex布局/3.jpg" alt=""><br>wrap-reverse：换行，在第一行下方。<br><img src="/2018/11/13/flex布局/4.jpg" alt=""></p>
+<h4 id="justify-content属性"><a href="#justify-content属性" class="headerlink" title="justify-content属性"></a>justify-content属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">justify-content: flex-start|flex-end|center|space-between|space-around|initial|inherit;</span><br></pre></td></tr></table></figure>
+<p>flex-start：（默认值）项目位于容器的开头。<br>flex-end：项目位于容器的结尾。<br>center：项目位于容器的中心。<br>space-between：项目位于各行之间留有空白的容器内。<br>space-around：项目位于各行之前、之间、之后都留有空白的容器内。<br><img src="/2018/11/13/flex布局/5.png" alt=""></p>
+<h4 id="align-items属性"><a href="#align-items属性" class="headerlink" title="align-items属性"></a>align-items属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit;</span><br></pre></td></tr></table></figure>
+<p>stretch：默认值。元素被拉伸以适应容器。<br>center：元素位于容器的中心。<br>flex-start：元素位于容器的开头。<br>flex-end：元素位于容器的结尾。<br>baseline：元素位于容器的基线上。<br><img src="/2018/11/13/flex布局/6.png" alt=""></p>
+<h4 id="align-content属性"><a href="#align-content属性" class="headerlink" title="align-content属性"></a>align-content属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">align-content: stretch|center|flex-start|flex-end|space-between|space-around|initial|inherit;</span><br></pre></td></tr></table></figure>
+<p>stretch：默认值。元素被拉伸以适应容器。<br>center：元素位于容器的中心。<br>flex-start：元素位于容器的开头。<br>flex-end：元素位于容器的结尾。<br>space-between：元素位于各行之间留有空白的容器内。<br>space-around：元素位于各行之前、之间、之后都留有空白的容器内。<br><img src="/2018/11/13/flex布局/7.png" alt=""></p>
+<h3 id="课后题目"><a href="#课后题目" class="headerlink" title="课后题目"></a>课后题目</h3><p>用flex布局实现<br><img src="/2018/11/13/flex布局/8.png" alt=""><br>首先。。看到题目考虑到的是几个属性。flex-wrap、align-items、align-content。<br>实际来敲一下。<br>先来写一下html。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"wrap"</span>&gt;</span><br><span class="line">    &lt;div class=<span class="string">"item"</span>&gt;</span><br><span class="line">        &lt;div style=<span class="string">"width: 30px; height: 30px; background: #000;"</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"item"</span>&gt;</span><br><span class="line">        对对对2</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"item"</span>&gt;</span><br><span class="line">        对对对3</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"item"</span>&gt;</span><br><span class="line">        对对对4</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>下面是css<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.wrap &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    width: 620px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">&#125;</span><br><span class="line">.item &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    height: 50px;</span><br><span class="line">    width: 50%;</span><br><span class="line">    border: 1px solid <span class="comment">#000;</span></span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样不论item里面是什么 都可以达到居中的效果。</p>
 
-根据上图描述出来的结果就是：1.第一个月初有一对刚诞生的兔子2.第二个月之后（第三个月初）它们可以生育3.每月每对可生育的兔子会诞生下一对新兔子4.兔子永不死去
-即可得出：
-求解斐波拉切数列常用的求解方式有两种，一种使用递归来求解。一种使用递推来求解。
-1、 递归求解。1234567function fun(n) &#123;	i...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/11/08/css实现多行文字显示折断/" title= "css实现多行文字显示折断">
+                    <div class="prevTitle">css实现多行文字显示折断</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -497,6 +492,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#flex"><span class="toc-number">1.</span> <span class="toc-text">flex</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-number">1.1.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-direction属性"><span class="toc-number">1.1.1.</span> <span class="toc-text">flex-direction属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#flex-wrap属性"><span class="toc-number">1.1.2.</span> <span class="toc-text">flex-wrap属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#justify-content属性"><span class="toc-number">1.1.3.</span> <span class="toc-text">justify-content属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#align-items属性"><span class="toc-number">1.1.4.</span> <span class="toc-text">align-items属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#align-content属性"><span class="toc-number">1.1.5.</span> <span class="toc-text">align-content属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#课后题目"><span class="toc-number">1.2.</span> <span class="toc-text">课后题目</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -892,6 +905,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
