@@ -359,6 +359,29 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/11/13/导出文件流的excel/" >
+            
+                <span>导出文件流的excel</span>
+        </a>
+        <div class="abstract-content">
+            一直以来导出（下载）都是由后端进行创建一个文件地址。然后通过URL进行下载。最近的项目里，会给后端传送不同的参数，然后后端筛选后以文件流的形式传送给前端。然后再进行导出excel。不多说，反正自己看，直接上图这就是后端返回的数据。那么，如何导出呢。因为是在vue中使用的。写法就按照Axios的写法。1234567891011121314151617181920this.$http.post(url,data,&#123;    responseType: 'blob'&#125;).then(res=&gt;&#123;    let blob = new Blob([res.data]...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/13</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/11/15/git常用相关命令/" >
             
                 <span>git常用相关命令</span>
@@ -638,36 +661,6 @@ splice(index,howmany,item);这个函数存在3个参数，其中index跟howmany�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "算法">算法</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/27/PWA/" >
-            
-                <span>PWA</span>
-        </a>
-        <div class="abstract-content">
-            什么是PWAPWA（Progressive Web App）[1]， 渐进式 WEB 应用，是提升 Web App 的体验的一种方法，给用户原生应用的体验。PWA 可以通过 Service Worker， Manifest 等新技术让站点具备离线可用、添加到桌面、实时消息提醒等功能，从功能和体验上无限接近原生 App。
-背景故事自1990年万维网之父-蒂莫西·约翰·“蒂姆”·伯纳·李爵士，创建了 HTTP、HTML 和 WorldWideWeb (全世界第一个网页浏览器)以来，Web 技术和影响力在以惊人的速度增长。HTML5，CSS3，Webpack，React，VUE，Babel，S...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "工具">工具</a>
     
 </div>
             
@@ -1043,9 +1036,24 @@ splice(index,howmany,item);这个函数存在3个参数，其中index跟howmany�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 18
+        Total : 19
         </div>
         <!-- search  -->
         
@@ -1055,6 +1063,20 @@ splice(index,howmany,item);这个函数存在3个参数，其中index跟howmany�
     
     
     
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2019/11/13/导出文件流的excel/" >导出文件流的excel</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
